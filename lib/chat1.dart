@@ -44,19 +44,20 @@ class _Chat_1State extends State<Chat_1> {
               height: 100,
               child: Row(
                 children: [
-                  Expanded(
+                  const Expanded(
                     child: TextField(
                       style: TextStyle(
                         color: Colors.white,
-                        ),
+                      ),
                     ),
                   ),
                   IconButton(
-                    onPressed: (){}, 
-                    icon: Icon(Icons.send, 
-                    color: Colors.green,
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.send,
+                      color: Colors.green,
                     ),
-                    ),
+                  ),
                 ],
               ),
             ),
