@@ -12,6 +12,7 @@ class Chat_1 extends StatefulWidget {
 }
 
 class _Chat_1State extends State<Chat_1> {
+  TextEditingController text = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,19 +41,25 @@ class _Chat_1State extends State<Chat_1> {
               ),
             ),
             Container(
+              padding: const EdgeInsets.all(15),
               color: Colors.black87,
               height: 100,
               child: Row(
                 children: [
-                  const Expanded(
+                  Expanded(
                     child: TextField(
-                      style: TextStyle(
+                      controller: text,
+                      style: const TextStyle(
                         color: Colors.white,
                       ),
                     ),
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        chat.add(text.text);
+                      });
+                    },
                     icon: const Icon(
                       Icons.send,
                       color: Colors.green,
